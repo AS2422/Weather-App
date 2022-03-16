@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.weather.WeatherFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/btn_select_city"
+                app:layout_constraintBottom_toBottomOf="@id/btn_select_city"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/black"
+                android:background="@drawable/selector_button"/>
+
+            <android.widget.Button
+                android:id="@+id/btn_select_city"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:text="Ekaterinburg"
+                android:drawableStart="@drawable/ic_geo"
+                android:drawablePadding="5dp"
+                android:textAllCaps="false"
+                android:textColor="@color/black"/>
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/btn_select_city"
+                app:layout_constraintBottom_toTopOf="@+id/tv_current_temp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_dataUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btn_select_city"
+                app:layout_constraintBottom_toTopOf="@+id/tv_current_temp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Обновлено:"
+                android:textSize="11sp"/>
+
+            <TextView
+                android:id="@+id/tv_current_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btn_select_city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="40dp"
+                android:text="-11 C"
+                android:textSize="70sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_felt_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_current_temp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Ощущается как -6 С"/>
+
+            <ImageView
+                android:id="@+id/iv_status"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="@+id/tv_status"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_status"
+                app:layout_constraintEnd_toStartOf="@+id/tv_status" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_felt_temp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:text="пасмурно"
+                />
+
+            <ImageView
+                android:id="@+id/iv_humidity"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="@+id/iv_atm_pres_sea"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_atm_pres_sea"
+                app:layout_constraintStart_toStartOf="@+id/tv_humidity"
+                app:layout_constraintEnd_toEndOf="@+id/tv_humidity"
+                android:src="@drawable/ic_humidity"
+                android:scaleY="1.2"
+                android:scaleX="1.2"/>
+
+            <ImageView
+                android:id="@+id/iv_atm_pres_sea"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status"
+                app:layout_constraintStart_toStartOf="@+id/tv_atm_pressure_sea"
+                app:layout_constraintEnd_toEndOf="@+id/tv_atm_pressure_sea"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_atm"/>
+
+            <ImageView
+                android:id="@+id/iv_atm_pres_gnd"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:layout_constraintTop_toTopOf="@+id/iv_atm_pres_sea"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_atm_pres_sea"
+                app:layout_constraintStart_toStartOf="@+id/tv_atm_pressure_earth"
+                app:layout_constraintEnd_toEndOf="@+id/tv_atm_pressure_earth"
+                android:src="@drawable/ic_atm"/>
+
+            <TextView
+                android:id="@+id/tv_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_atm_pressure_sea"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="20dp"
+                android:text="Влажность"/>
+
+            <TextView
+                android:id="@+id/tv_atm_pressure_sea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/iv_atm_pres_sea"
+                app:layout_constraintStart_toEndOf="@+id/tv_humidity"
+                app:layout_constraintEnd_toStartOf="@+id/tv_atm_pressure_earth"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/atm_press_sea"/>
+
+            <TextView
+                android:id="@+id/tv_atm_pressure_earth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_atm_pressure_sea"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                android:text="@string/atm_press_earth"/>
+
+            <TextView
+                android:id="@+id/tv_humidity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_humidity"
+                app:layout_constraintStart_toStartOf="@+id/tv_humidity"
+                app:layout_constraintEnd_toEndOf="@+id/tv_humidity"
+                android:layout_marginTop="15dp"
+                android:text="43%"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_atm_pressure_sea_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_atm_pressure_sea"
+                app:layout_constraintStart_toStartOf="@+id/tv_atm_pressure_sea"
+                app:layout_constraintEnd_toEndOf="@+id/tv_atm_pressure_sea"
+                android:layout_marginTop="15dp"
+
+                android:gravity="center"
+                android:text="75 мм рт. ст."
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_atm_pressure_earth_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_atm_pressure_earth"
+                app:layout_constraintStart_toStartOf="@+id/tv_atm_pressure_earth"
+                app:layout_constraintEnd_toEndOf="@+id/tv_atm_pressure_earth"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="75 мм рт. ст."
+                android:textColor="@color/black"/>
+
+
+
+            <ImageView
+                android:id="@+id/iv_wind"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_atm_pressure_sea_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_wind"/>
+
+            <TextView
+                android:id="@+id/tv_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/iv_wind"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:text="Ветер"/>
+
+            <TextView
+                android:id="@+id/tv_wind_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wind"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:text="3 м/с"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_wind_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wind_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:text="Юго-западный"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

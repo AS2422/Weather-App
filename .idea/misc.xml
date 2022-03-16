@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable-v24/background_cloudy.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable-v24/ic_down.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable-v24/ic_geo.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/background_clear.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/background_cloudy.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/background_few_cloudy.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/background_rain.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/background_snow.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/custom_button_select.xml" value="0.24" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/gradient_button.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_atm.xml" value="0.24" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_back.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_down.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_geo.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_humidity.xml" value="0.24" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.244" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_splash.xml" value="0.24" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/ic_wind.xml" value="0.24" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/drawable/selector_button.xml" value="0.2025" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/activity_weather.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/city_item.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/fragment_exit.xml" value="0.1" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/fragment_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/fragment_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/Weather_Involta_Safin/app/src/main/res/layout/fragment_weather.xml" value="0.35260416666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
