@@ -9,8 +9,6 @@ interface WeatherAPI {
 
     @GET("data/2.5/weather?appid=77b25b683547c602c1484577e67bb360&units=metric&lang=ru")
 
-    fun getCity(
-        @Query("q") cityName: String
-    ): Single<WeatherModel>
+    fun getCity(@Query("q") cityName: String): Single<WeatherModel>
 
 }

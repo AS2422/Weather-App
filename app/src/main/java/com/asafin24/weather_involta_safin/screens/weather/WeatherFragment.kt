@@ -23,18 +23,11 @@ class WeatherFragment : Fragment() {
     lateinit var binding: FragmentWeatherBinding
     lateinit var currentCity: CityModel
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentWeatherBinding.inflate(layoutInflater, container, false)
-
-        val cityName = arguments?.getSerializable("city") as String
-        currentCity = CityModel(cityName = cityName)
-        binding.btnSelectCity.text = currentCity.cityName
-
         return binding.root
     }
 
@@ -51,7 +44,6 @@ class WeatherFragment : Fragment() {
         binding.srl.setOnRefreshListener {
             viewModel.onRefresh(city)
             getLiveData()
-            editCity()
             binding.srl.isRefreshing = false
         }
         //
@@ -63,18 +55,20 @@ class WeatherFragment : Fragment() {
     }
 
     private fun init() {
+        val cityName = arguments?.getSerializable("city") as String
+        currentCity = CityModel(cityName = cityName)
+        binding.btnSelectCity.text = currentCity.cityName
+
         viewModel = ViewModelProvider(this)[WeatherViewModel::class.java]
         viewModel.initDataBase()
 
         binding.ibBack.setOnClickListener {
-            viewModel.editCity(currentCity) {}
             APP.navController.navigate(R.id.action_weatherFragment_to_startFragment)
         }
 
         //Системная кнопка "Назад"
         val callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                viewModel.editCity(currentCity) {}
                 APP.navController.navigate(R.id.action_weatherFragment_to_startFragment)
             }
         }
@@ -173,16 +167,10 @@ class WeatherFragment : Fragment() {
         binding.srl.setBackgroundResource(when (binding.tvStatus.text) {
             "ясно" -> R.drawable.background_clear
             "пасмурно" -> R.drawable.background_cloudy
-            "облачно с прояснениями" -> R.drawable.background_few_cloudy
-            "дождь" -> R.drawable.background_rain
-            "небольшой дождь" -> R.drawable.background_rain
-            "гроза" -> R.drawable.background_rain
-            "снег" -> R.drawable.background_snow
-            "небольшой снег" -> R.drawable.background_snow
-            "туман" -> R.drawable.background_rain
+            "облачно с прояснениями", "переменная облачность", "небольшая облачность"  -> R.drawable.background_few_cloudy
+            "дождь", "гроза", "небольшой дождь", "туман" -> R.drawable.background_rain
+            "снег", "небольшой снег" -> R.drawable.background_snow
             else -> R.drawable.background_clear
-
         })
     }
-
 }

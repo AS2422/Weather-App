@@ -73,7 +73,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="40dp"
-                android:text="-11 C"
+                android:text="- C"
                 android:textSize="70sp"
                 android:textColor="@color/black"/>
 
@@ -84,7 +84,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_current_temp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="Ощущается как -6 С"/>
+                android:text="Ощущается как - С"/>
 
             <ImageView
                 android:id="@+id/iv_status"
@@ -175,7 +175,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_humidity"
                 app:layout_constraintEnd_toEndOf="@+id/tv_humidity"
                 android:layout_marginTop="15dp"
-                android:text="43%"
+                android:text="-%"
                 android:textColor="@color/black" />
 
             <TextView
@@ -188,7 +188,7 @@
                 android:layout_marginTop="15dp"
 
                 android:gravity="center"
-                android:text="75 мм рт. ст."
+                android:text="- мм рт. ст."
                 android:textColor="@color/black"/>
 
             <TextView
@@ -200,7 +200,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_atm_pressure_earth"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:text="75 мм рт. ст."
+                android:text="- мм рт. ст."
                 android:textColor="@color/black"/>
 
 
@@ -233,7 +233,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
-                android:text="3 м/с"
+                android:text="- м/с"
                 android:textColor="@color/black"/>
 
             <TextView
