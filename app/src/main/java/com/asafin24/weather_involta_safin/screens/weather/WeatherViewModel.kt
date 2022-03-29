@@ -75,8 +75,4 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
     fun searchDatabase(cityName: String) : LiveData<List<CityModel>> {
         return REPOSITORY.searchDataBase(cityName).asLiveData()
     }
-
-
-
-
 }
