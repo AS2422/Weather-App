@@ -4,6 +4,8 @@
 
 Приложение "Погода" позволяет получать данные о текущей погоде в разных городах России и мира, используя сервис Openweathermap.org.
 
+## Скриншоты
+![alt text](screenshots/first.jpg "1")   ![alt text](screenshots/second.jpg "2")
 
 ## Используемый стек
 - MVVM
